@@ -1,5 +1,9 @@
 # Data Dashboard
 
+## Colaboradoras
++ Angie Cortez
++ Yamille Chumacero
+
 ## Preámbulo
 
 En Laboratoria, las Training Managers (TMs) hacen un gran trabajo al analizar la
