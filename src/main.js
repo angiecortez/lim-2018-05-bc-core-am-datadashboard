@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let table = document.getElementById('response-container')
 
 
@@ -19,3 +20,12 @@ for (let i in arr){
 }
 
 }
+=======
+const btnContinue = document.getElementById("btnLogin"); 
+btnContinue.addEventListener("click", () => {
+  const hidden = document.getElementById("container-login");
+  const show = document.getElementById("container-lab-view");
+  hidden.style.display = "none";
+  show.style.display = "block";
+});
+>>>>>>> 00a84f2b0053072eed55b4d49d8e70e7133ee4d4
