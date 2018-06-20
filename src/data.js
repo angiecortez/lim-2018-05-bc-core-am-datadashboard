@@ -4,43 +4,49 @@ let urlUsers = "http://127.0.0.1:8887/data/cohorts/lim-2018-03-pre-core-pw/users
 let Cohorts1 = "http://127.0.0.1:8887/data/cohorts.json"
 let btn = document.getElementById('btn');
 
-// btn.addEventListener('click', ()=>{ })
-let xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-   if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-       let myArr = JSON.parse(xmlhttp.responseText);
-       myFunction(myArr);
-   }
-};
-xmlhttp.open("GET", urlUsers, true);
-xmlhttp.send();
-function myFunction(arr) {
-cuerpo.innerHTML = '';
-
-for (let valor of arr){
-cuerpo.innerHTML += `
-<tr>
-
-    <td>${valor.name}</td>
-    <td>${valor.signupCohort}</td>
-    <td>${valor.role}</td>
-
-  </tr>
-`
-}
-}
-
-// let xmlhttp1 = new XMLHttpRequest();
+// // btn.addEventListener('click', ()=>{ })
+// let xmlhttp = new XMLHttpRequest();
 // xmlhttp.onreadystatechange = function() {
-//    if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
-//        let myArr = JSON.parse(xmlhttp1.responseText);
-//        myFunction(myArra);
+//    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+//        let myArr = JSON.parse(xmlhttp.responseText);
+//        //ACA DEBE IR LO MISMO PERO DE PROGRESS let xmlhttp = new XMLHttpRequest();
+//        // xmlhttp.onreadystatechange = function() {
+//        //    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+//        //        let myArr = JSON.parse(xmlhttp.responseText);
+//        // xmlhttp.open("GET", urlProgress, true);
+//        // xmlhttp.send();
+//        // CHEQUEAR ESTO INMEDIATAMENTE.......
+//        myFunction(myArr);
 //    }
 // };
-// xmlhttp1.open("GET", urlProgress, true);
-// xmlhttp1.send();
+// xmlhttp.open("GET", urlUsers, true);
+// xmlhttp.send();
+// function myFunction(arr) {
+// cuerpo.innerHTML = '';
 //
-// function myFunction(arra) {
-// var objeto=arra[0];
-// var id =(Object.keys(objeto));
-// console.log(id[0]);
+// for (let valor of arr){
+// cuerpo.innerHTML += `
+// <tr>
+//     <td>${valor.name}</td>
+//     <td>${valor.signupCohort}</td>
+//     <td>${valor.role}</td>
+//
+//   </tr>
+// `
+// }
+// }
+
+let xmlhttp1 = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+   if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
+       let myArr = JSON.parse(xmlhttp1.responseText);
+       myFunction(myArra);
+   }
+};
+xmlhttp1.open("GET", urlProgress, true);
+xmlhttp1.send();
+
+function myFunction(arra) {
+var objeto=arra[0];
+var id =(Object.keys(objeto));
+console.log(id[0]);
