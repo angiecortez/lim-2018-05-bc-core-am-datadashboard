@@ -190,4 +190,3 @@ window.sortUsers = (users, orderBy, orderDirection)=> { //asc y desc
 //     };
 //    return users;
 //   }
->>>>>>> develop
