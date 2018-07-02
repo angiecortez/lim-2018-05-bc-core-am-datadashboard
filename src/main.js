@@ -1,41 +1,31 @@
-const btnContinue = document.getElementById("btnLogin");
-btnContinue.addEventListener("click", () => {
-  const hidden = document.getElementById("container-login");
-  const show = document.getElementById("container-lab-view");
-  hidden.style.display = "none";
-  show.style.display = "block";
-});
+
+let URLUsers = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
+let URLProgress = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
+let URLCohorts = '../data/cohorts.json';
+
+loadJSON(URLUsers, (userJSON) => {
+  loadJSON(URLProgress, (progressJSON) => {
+    options.cohortData.users = userJSON;
+    options.cohortData.progress= progressJSON;
+
+    // extraer los ids de los cursos que sean de lima
+    let id = 'lim-2018-03-pre-core-pw';
+      const computeUsersStats1 = computeUsersStats(userJSON, progressJSON, id);
+      console.log(sortUsers(computeUsersStats1, 'asc'));
+      // filterUsers(computeUsersStats1, 'search');
+    });
+ });
+
+loadJSON(URLCohorts, (cohortsJSON)=>{
+  let cohort = cohortsJSON.filter((cohort) => cohort.id))
+
+    let lima= cohort.startsWith('lim-')
+    let chile = cohort.startsWith('scl-')
+    let aqp= cohort.startsWith('aqp-')
+    let mex = cohort.startsWith('cdmx') || cohort.startsWith('gdl-')
+    let brasil = cohort.startsWith('spl-')
+
+    options.cohort = cohort;
 
 
-
-
-
-const xhrCohort = new XMLHttpRequest();
-xhrCohort.open("GET", Cohorts1, true);
-xhrCohort.onload = ()=>{
-  let myCohorts = JSON.parse(xhrCohort.responseText);
-const xhrHttp = new XMLHttpRequest();
-xhrHttp.open("GET", urlUsers, true)
-xhrHttp.onload = function() {
-  let myUsers = JSON.parse(xhrHttp.responseText);
-// console.log(myUsers);
-const xhrProgress = new XMLHttpRequest();
-xhrProgress.open("GET", urlProgress, true);
-xhrProgress.onload = function(event){
-  let myProgress = JSON.parse(xhrProgress.responseText);
-  // console.log(myProgress);
-  computeUsersStats(myUsers, myProgress, myCohorts);
-  // userPush(users)
-}
-xhrProgress.send();
-};
-xhrHttp.send();
-};
-xhrCohorts.send();
-
-function computeUsersStats(myUsers, myProgress, myCohorts){
-  for(let cohort of myCohorts){
-    const idCohorts = cohort.id
-    console.log(idCohorts);
-  }
 }

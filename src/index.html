@@ -4,83 +4,69 @@
     <meta charset="utf-8">
     <title>Data Dashboard</title>
     <link rel="stylesheet" href="style.css" />
+    <meta name="description" content="Plataforma">
+    <link rel="icon" href="image/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:" content="">
   </head>
   <body>
-    <!-- <div class="site-container">
-
-          <ul id="response-container1"></ul>
-          <ul id="response-container2"></ul>
-          <ul id="response-container3"></ul>
-          <ul id="response-container4"></ul>
-          <ul id="response-container5"></ul>
-          <ul id="response-container6"></ul>
-
-
-    </div> -->
-
-    <div class="container" id="container-login">
-        <form name="quiz" id="quiz">
-          <img src="image/Laboratoria_CMYK_logo-03.png">
-
-          <input type="email" id="email" class="redondo" placeholder="Correo electrónico"/><br><br>
-          <input type="password" id="password" class="redondo" placeholder="Contraseña"/><br><br>
-          <input type="button" class="button" value="INICIAR SESIÓN" id="btnLogin"><br><br>
-          <!-- <a href="#"> Restaurar contraseña</a><br><br><br> -->
-          <label for="password" ng-href="#">Restaurar contraseña</label><br><br><br>
-        </form>
-      </div>
-
-      <section id="container-lab-view" style="display: none">
+      <section id="container-lab-view" style="display: ">
         <div id="acorh">
                 <ul class="acorh">
-                    <li><img class="img-menu" src="image/Laboratoria_CMYK_logo-03.png"></a>
+                    <li><img class="img-menu" src="image/Laboratoria-logo.png" alt=""></a>
                       <li><img class="user-menu" src="image/user_women.png"></a> <br>
                     <li><a href="#">Overview</a>
                     </li>
                     <li><a href="#">Sede</a>
                       <ul>
-                        <li><a href="URL21">Lima</a></li>
-                        <li><a href="URL22">Chile</a></li>
-                        <li><a href="URL23">México</a></li>
-                        <li><a href="URL24">Brasil</a></li>
+                        <li><a id="lim" href="#">Lima</a></li>
+                        <li><a id="aqp" href="#">Arequipa</a></li>
+                        <li><a id="scl" href="#">Chile</a></li>
+                        <li><a id="mex" href="#">México</a></li>
+                        <li><a id="brs" href="#">Brasil</a></li>
                       </ul>
                     </li>
                     <li><a href="#">Configuración</a>
                     </li>
                   </ul>
-
+        </div>
+        <br>
+        <div>
+          <label for="cohortData">Cohort</label>
+          <select id="cohortData"></select>
+            <br>
+            <label for="">Ordenar</label>
+          <select id="orderBy">
+            <option><a href="#"></a>Nombre</option>
+            <option><a href="#"></a>Porcentaje Completitud Total</option>
+            <option><a href="#"></a>Ejercicios Completados</option>
+            <option><a href="#"></a>Quizzes Completados</option>
+            <option><a href="#"></a>Puntuación de Quizzes</option>
+            <option><a href="#"></a>Lecturas Completadas</option>
+          </select>
+          <select id="orderDirection">
+            <option><a href="#"></a>ASCENDENTE</option>
+            <option><a href="#"></a>DESCENDENTE</option>
+          </select>
+          <input type="text" id="search" placeholder="Buscar ...">
         </div>
         <table id="table">
             <thead>
               <tr>
-                <!-- <th>Id</th> -->
-                <th>Name</th>
-                <th>SignupCohort</th>
-                <th>Role</th>
-
-              </tr>
+                 <th class="name">Alumna</th>
+                 <th class="exercisesClompleted">Ejercicios completados</th>
+                 <th class="readCompleted">Lecturas completadas</th>
+                 <th class="quizCompleted">Quizz completados</th>
+                 <th class="percent">Completitud Total</th>
+               </tr>
             </thead>
             <tbody id="cuerpo">
-
             </tbody>
-           </table>
-
+        </table>
       </section>
-
-
-
-    <!-- <div id="users-container"></div> -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="data.js"></script>
-    <script src="main.js"></script>
+    <!-- <script src="data.js"></script> -->
+    <!-- <script src="main.js"></script> -->
   </body>
-</html>
-
-
-      </script>
-
-
-  </body>
-
 </html>
