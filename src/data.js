@@ -25,16 +25,9 @@ loadJSON(URLUsers, (userJSON) => {
       console.log(sortUsers(computeUsersStats1, 'asc'));
       // filterUsers(computeUsersStats1, 'search');
 
-
-    // usar sólo courses tiene un problema y es que en el JSON de cohorts no hay ningún ID para estos
-    // loadJSON(URLCohorts, (cohortsJSON) => {
-    //   let cohort = cohortsJSON.filter((cohort) => cohort.id === id)[0];
-      // let courses = Object.keys(cohort.coursesIndex);
-
      });
   });
 // });
-
 
 //empieza// let id = 'lim-2018-03-pre-core-pw';
 // const listCohorts = (id) => {
@@ -131,21 +124,12 @@ window.computeUsersStats = (users, progress, courses) => {
   });
 }
 
-//refactorizador que hara la funcion de menos a mas
-const ascendent = (words) => {
-  return array.sort((a,b) => a > b ? 1: -1)
-}
-//refactorizador que hara la funcion de mas a menos
-const descendent = (words) => {
-  return array.sort((a,b) => a < b ? 1: -1)
-}
-
 // let approved = students.filter(student => student.score >= 11);
 window.sortUsers = (users, orderBy, orderDirection)=> { //asc y desc
     const users = users.sort((a, b) => (a.name > b.name ? 1 : -1));
     console.log(a);
 //  if(orderBy === 'name' && orderDirection === 'asc'){
-//     users.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1));
+//     users.sort((a, b) => (a.name > b.name ? 1 : -1));
 //  }else if(orderBy === 'name' && orderDirection === 'desc'){
 //     users.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1));
 // }

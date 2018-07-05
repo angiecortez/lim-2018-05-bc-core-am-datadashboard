@@ -19,13 +19,10 @@ loadJSON(URLUsers, (userJSON) => {
 loadJSON(URLCohorts, (cohortsJSON)=>{
   let cohort = cohortsJSON.filter((cohort) => cohort.id))
 
-    let lima= cohort.startsWith('lim-')
-    let chile = cohort.startsWith('scl-')
-    let aqp= cohort.startsWith('aqp-')
-    let mex = cohort.startsWith('cdmx') || cohort.startsWith('gdl-')
-    let brasil = cohort.startsWith('spl-')
-
+    let lima= cohort.startsWith('lim-');
+    let chile = cohort.startsWith('scl-');
+    let aqp= cohort.startsWith('aqp-');
+    let mex = cohort.startsWith('cdmx') || cohort.startsWith('gdl-');
+    let brasil = cohort.startsWith('spl-');
     options.cohort = cohort;
-
-
 }
