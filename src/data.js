@@ -81,8 +81,8 @@ window.computeUsersStats = (users, progress, courses) => {
 
 // let approved = students.filter(student => student.score >= 11);
 window.sortUsers = (users, orderBy, orderDirection)=> {
- if(orderBy === 'name' && orderDirection === 'ASC'){
-    return users.sort((a, b) => (a.stats.name > b.stats.name ? 1 : -1));
+if(orderBy === 'name' && orderDirection === 'ASC'){
+    return users.sort((a, b) => (a.stats.name.toLowerCase() > b.stats.name.toLowerCase() ? 1 : -1));
  }else if(orderBy === 'name' && orderDirection === 'DESC'){
     return users.sort((a, b) => (a.stats.name.toLowerCase() > b.stats.name.toLowerCase() ? -1 : 1)); // el test de los nombres no corre con toLowerCase
 }
@@ -111,7 +111,8 @@ if (orderBy === 'Porcentaje de lecturas completadas' && orderDirection === 'ASC'
  } else if (orderBy === 'Porcentaje de lecturas completadas' && orderDirection === 'DESC') {
    return users.sort((a, b) => (a.stats.reads.completed < b.stats.reads.completed ? 1 : -1));
 }
-  // return users;
+debugger
+  return users;
 }
 
 window.filterUsers = (users, search) => {

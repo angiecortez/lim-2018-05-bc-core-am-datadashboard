@@ -10,8 +10,8 @@
     <meta name="twitter:" content="">
   </head>
   <body>
-      <section id="container-lab-view" style="display: ">
-        <div id="acorh">
+      <section class="main" id="container-lab-view" style="display: ">
+        <div class="menu" id="acorh">
                 <ul class="acorh">
                     <li><img class="img-menu" src="image/Laboratoria-logo.png"></li>
                     <li><img class="user-menu" src="image/user_women.png"></li>
@@ -26,23 +26,26 @@
                         <li><a href="" id="spl">Brasil</a></li>
                       </ul>
                     </li>
+                    <li><a href="#">Ordenar por:</a>
+                      <ul>
+                        <li><a href="">Nombre</a></li>
+                        <li><a href="">Porcentaje Completitud Total</a></li>
+                        <li><a href="">Ejercicios Completados</a></li>
+                        <li><a href="">Quizzes Completados</a></li>
+                        <li><a href="">Puntuación de Quizzes</a></li>
+                        <li><a href="">Lecturas Completadas</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Cohorts</a></li>
+                      <ul class="sroll" id="main-content">
+
+                      </ul>
                     <li><a href="#">Configuración</a></li>
                   </ul>
         </div>
 
-        <div>
-          <label for="cohortData">Cohort</label>
-          <select id="cohortData"></select>
-            <br>
-            <label for="">Ordenar</label>
-          <select id="orderBy">
-            <option><a href="#"></a>Nombre</option>
-            <option><a href="#"></a>Porcentaje Completitud Total</option>
-            <option><a href="#"></a>Ejercicios Completados</option>
-            <option><a href="#"></a>Quizzes Completados</option>
-            <option><a href="#"></a>Puntuación de Quizzes</option>
-            <option><a href="#"></a>Lecturas Completadas</option>
-          </select>
+        <div class="ordenado">
+          <label for="">Ordenar</label>
           <select id="orderDirection">
             <option><a href="#"></a>ASCENDENTE</option>
             <option><a href="#"></a>DESCENDENTE</option>
@@ -51,25 +54,11 @@
           <button id="ordenar">ordenar</button>
           <input type="text" id="search" placeholder="Buscar ...">
         </div>
-
-        <!-- <table id="table">
-            <thead>
-              <tr>
-                 <th class="name">Alumna</th>
-                 <th class="exercisesClompleted">Ejercicios completados</th>
-                 <th class="readCompleted">Lecturas completadas</th>
-                 <th class="quizCompleted">Quizz completados</th>
-                 <th class="percent">Completitud Total</th>
-               </tr>
-            </thead>
-            <tbody id="cuerpo">
-            </tbody>
-        </table> -->
-        <div id="main-content">
+        <div class="contentUsers"id="content">
 
         </div>
       </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <!-- <script src="blablabla.js"></script> -->
     <script src="data.js"></script>
     <!-- <script src="angie.js"></script> -->

@@ -35,9 +35,9 @@ const cohortsJSON = (campus, cohortArray) => { //debugger
   sectionMainContent.innerHTML= '';
   for (cohort of cohortsTotal) {
     sectionMainContent.innerHTML +=
-    ` <div>
-       <option id='${cohort.id}'>${cohort.id}</option>
-     </div> `;
+    `
+       <li class= "nuevoScroll" id='${cohort.id}'>${cohort.id}</li>
+      `;
   };
 }
 
@@ -45,20 +45,18 @@ const progressJSON = (cohortName, ObjProgress)=> {
   options.cohortData.progress = ObjProgress;
   const arrFinal = processCohortData(options);
   console.log(processCohortData(options));
-  // for (const user of arrFinal) {
-  //   sectionMainContent.innerHTML = `
-  //   <table><tr><th>Nombre</th><th>Porcentaje</th><td>Ejercicios</th><td>Quizzes</th><th>Lecturas</th><td>Prom Quiz</td></tr>
-  //   <tr>
-  //               <td>${ user.name.toUpperCase()}</td>
-  //               <td>${ user.stats.percent + '%'}</td>
-  //               <td>${ user.stats.exercices.percent + '%'}</td>
-  //               <td>${ user.stats.quizzes.percent + '%'}</td>
-  //               <td>${ user.stats.reads.percent + '%'}</td>
-  //               <td>${ user.stats.quizzes.scoreAvg + '%'}</td>
-  //   </tr>
-  // </table>
-  //   `
-  // }
+  divContent.innerHTML = '';
+  for (const user of arrFinal) {
+  divContent.innerHTML += `
+  <div class="porCurso"> <p><strong>Nombre : </strong>${ user.stats.name.toUpperCase()}</p>
+                <p><strong>Porcentaje de Completitud :</strong>${ user.stats.percent + '%'}</p>
+                <p><strong>Ejercicios Completados    :</strong>${ user.stats.exercises.percent + '%'}</p>
+                <p><strong>Quizzes Completados       :</strong>${ user.stats.quizzes.percent + '%'}</p>
+                <p><strong>Lecturas Completados      :</strong>${ user.stats.reads.percent + '%'}</p>
+                <p><strong>Promedio de Quizzes       :</strong>${ user.stats.quizzes.scoreAvg + '%'}</p>
+  </div>
+    `
+  }
 }
 
 const userJSON = (cohortName, userArray) => {
