@@ -27,7 +27,7 @@ describe('data', () => {
 
       const arrLengthCheck = users.length === processed.length ||
        users.filter(u => u.role === 'student').length === processed.length;
-      assert.isOk(arrLengthCheck)
+       assert.isOk(arrLengthCheck)
 
       processed.forEach(user => {
         assert.ok(user.hasOwnProperty('stats'));
@@ -151,10 +151,10 @@ let allUser = [userA,userB,userC];
 
 
     it('debería retornar arreglo de usuarios ordenado por nombre ASC', () => {
-      assert.deepEqual(window.sortUsers(allUser, "Nombre", "ASC"), [userA,userC,userB])
+      assert.deepEqual(window.sortUsers(allUser, "name", "ASC"), [userA,userC,userB])
     });
     it('debería retornar arreglo de usuarios ordenado por nombre DESC', () => {
-      assert.deepEqual(window.sortUsers(allUser, "Nombre", "DESC"), [userB,userC,userA])
+      assert.deepEqual(window.sortUsers(allUser, "name", "DESC"), [userB,userC,userA])
     });
     it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC', () => {
       assert.deepEqual(window.sortUsers(allUser, "Porcentaje Completitud Total", "ASC"), [userB,userC,userA])
@@ -178,7 +178,7 @@ let allUser = [userA,userB,userC];
     assert.deepEqual(window.sortUsers(allUser, "Puntuacion promedio en quizzes", "ASC"),  [userC,userB,userA])
     });
     it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC', () => {
-      assert.deepEqual(window.sortUsers(allUser, "Puntuacion promedio en quizzes", "DESC"), [userA,userB,userC])
+      assert.deepEqual(window.sortUsers(allUser, "Puntuacion promedio en quizzes", "DESC"), [userA,userC,userB])
     });
     it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC', () =>{
       assert.deepEqual(window.sortUsers(allUser, "Porcentaje de lecturas completadas", "ASC"), [userB,userC,userA])
@@ -190,15 +190,95 @@ let allUser = [userA,userB,userC];
   });
 
   describe('filterUsers(users, filterBy)', () => {
+    let userA = {
+      stats: {
+        name : "Angie",
+        percent: 100,
+        exercises : {
+          total: 2,
+          completed: 2,
+          percent: 100
+        },
+        reads : {
+          total: 11,
+          completed: 11,
+          percent: 100
+        },
+        quizzes : {
+          total: 3,
+          completed: 3,
+          percent: 100,
+          scoreSum: 255,
+          scoreAvg: 85
+        }
+      }
+    }
+    let userB = {
+      stats: {
+        name : "Lizeth Carmona",
+        percent: 36,
+        exercises : {
+          total: 5,
+          completed: 0,
+          percent: 0
+        },
+        reads : {
+          total: 10,
+          completed: 2,
+          percent: 20
+        },
+        quizzes : {
+          total: 8,
+          completed: 2,
+          percent: 25,
+          scoreSum: 160,
+          scoreAvg: 80
+        }
+      }
+    }
+    let userC = {
+      stats: {
+        name : "Annie Herrera",
+        percent: 90,
+        exercises : {
+          total: 5,
+          completed: 4,
+          percent: 80
+        },
+        reads : {
+          total: 10,
+          completed: 5,
+          percent: 50
+        },
+        quizzes : {
+          total: 8,
+          completed: 4,
+          percent: 50,
+          scoreSum: 320,
+          scoreAvg: 80
+        }
+      }
+    }
+    let allUser = [userA,userB,userC];
 
-    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)');
+    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)', () => {
+      assert.deepEqual(window.filterUsers(allUser, "an"), [userA,userC])
+
+    });
 
   });
 
   describe('processCohortData({ cohortData, orderBy, orderDirection, filterBy })', () => {
+    let options = {
+      cohort: fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw'),
+      cohortData: fixtures,
+      orderBy: 'name',
+      orderDirection: 'ASC',
+      search: 'angie'
+    };
 
-    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter');
-
+    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter', ()=>{
+      assert.deepEqual(window.processCohortData(options).length, 2)
+    });
   });
-
 });

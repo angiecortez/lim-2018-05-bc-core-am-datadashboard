@@ -1,5 +1,4 @@
 window.computeUsersStats = (users, progress, courses) => {
-  //console.log(courses);
   const users1 = users;
   const progress1 = progress;
 
@@ -67,65 +66,62 @@ window.computeUsersStats = (users, progress, courses) => {
     const progressUser = progress1[user.id];
     return ({
       id: user.id,
-      name: user.name,
       stats : {
+        name: user.name,
         percent: calculateCompletionPercentage(progressUser),
         exercises: calculateExercises(progressUser),
         reads: calculateReads(progressUser),
         quizzes: calculateQuizess(progressUser),
        }
     });
-    return user;
+      // return user;
   });
   return students;
 }
 
 // let approved = students.filter(student => student.score >= 11);
-window.sortUsers = (users, orderBy, orderDirection)=> { //asc y desc
+window.sortUsers = (users, orderBy, orderDirection)=> {
  if(orderBy === 'name' && orderDirection === 'ASC'){
-    const name = users.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1));
-    return name;
+    return users.sort((a, b) => (a.stats.name > b.stats.name ? 1 : -1));
  }else if(orderBy === 'name' && orderDirection === 'DESC'){
-    const name = users.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1));
+    return users.sort((a, b) => (a.stats.name.toLowerCase() > b.stats.name.toLowerCase() ? -1 : 1)); // el test de los nombres no corre con toLowerCase
 }
 if(orderBy === 'Porcentaje Completitud Total' && orderDirection === 'ASC'){
-   const userPercent = users.sort((a, b) => (a.stats.percent > b.stats.percent ? 1 : -1));
+   return users.sort((a, b) => (a.stats.percent > b.stats.percent ? 1 : -1));
  }else if (orderBy === 'Porcentaje Completitud Total' && orderDirection === 'DESC') {
-   const userPercent = users.sort((a, b) => (a.stats.percent < b.stats.percent ? 1 : -1));
+   return users.sort((a, b) => (a.stats.percent < b.stats.percent ? 1 : -1));
 }
 if (orderBy === 'Porcentaje ejercicios completos' && orderDirection === 'ASC') {
-   const userExercisesCompleted = users.sort((a, b) => (a.stats.exercises.completed > b.stats.exercises.completed ? 1 : -1));
+   return users.sort((a, b) => (a.stats.exercises.completed > b.stats.exercises.completed ? 1 : -1));
  } else if (orderBy === 'Porcentaje ejercicios completos' && orderDirection === 'DESC') {
-   const userExercisesCompleted = users.sort((a, b) => (a.stats.exercises.completed < b.stats.exercises.completed ? 1 : -1));
+   return users.sort((a, b) => (a.stats.exercises.completed < b.stats.exercises.completed ? 1 : -1));
 }
 if (orderBy === 'Porcentaje Quizzes completos' && orderDirection === 'ASC') {
-   const userReadTotal = users.sort((a, b) => (a.stats.quizzes.completed > b.stats.quizzes.completed ? 1 : -1));
+   return users.sort((a, b) => (a.stats.quizzes.completed > b.stats.quizzes.completed ? 1 : -1));
  } else if (orderBy === 'Porcentaje Quizzes completos' && orderDirection === 'DESC') {
-   const userReadTotal = users.sort((a, b) => (a.stats.quizzes.completed < b.stats.quizzes.completed ? 1 : -1));
+   return users.sort((a, b) => (a.stats.quizzes.completed < b.stats.quizzes.completed ? 1 : -1));
 }
 if (orderBy === 'Puntuacion promedio en quizzes' && orderDirection === 'ASC') {
-   const scoreSum = users.sort((a, b) => (a.stats.quizzes.scoreSum > b.stats.quizzes.scoreSum ? 1 : -1));
+   return users.sort((a, b) => (a.stats.quizzes.scoreAvg > b.stats.quizzes.scoreAvg ? 1 : -1));
  } else if (orderBy === 'Puntuacion promedio en quizzes' && orderDirection === 'DESC') {
-   const scoreSum = users.sort((a, b) => (a.stats.quizzes.scoreSum < b.stats.quizzes.scoreSum ? 1 : -1));
-return scoreSum;
+   return users.sort((a, b) => (a.stats.quizzes.scoreAvg < b.stats.quizzes.scoreAvg ? 1 : -1));
 }
 if (orderBy === 'Porcentaje de lecturas completadas' && orderDirection === 'ASC') {
-   const userReadTotal = users.sort((a, b) => (a.stats.reads.completed > b.stats.reads.completed ? 1 : -1));
+   return users.sort((a, b) => (a.stats.reads.completed > b.stats.reads.completed ? 1 : -1));
  } else if (orderBy === 'Porcentaje de lecturas completadas' && orderDirection === 'DESC') {
-   const userReadTotal = users.sort((a, b) => (a.stats.reads.completed < b.stats.reads.completed ? 1 : -1));
+   return users.sort((a, b) => (a.stats.reads.completed < b.stats.reads.completed ? 1 : -1));
 }
-  return users;
+  // return users;
 }
 
 window.filterUsers = (users, search) => {
-//   let filterByUsers = users.filter(user => (user.name.toUpperCase().indexOf(search.toUpperCase()) !== -1)
-//     return filterByUsers
+  return users.filter(user => (user.stats.name.toUpperCase().indexOf(search.toUpperCase()))!== -1)
 }
 
 window.processCohortData = (options)  => {
     const courses = Object.keys(options.cohort.coursesIndex);
     let users = computeUsersStats(options.cohortData.users, options.cohortData.progress, courses);
     users = sortUsers (users, options.orderBy, options.orderDirection);
-    // search ? users = filterUsers (users, search) : null
-   return users;
+    users = options.search ?  filterUsers(users, options.search) : users;
+    return users;
   }
