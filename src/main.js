@@ -27,7 +27,7 @@ const loadJSON = (str, url, callback) => {
     }
   });
   xhr.send();
-  }
+}
 
 const cohortsJSON = (campus, cohortArray) => { //debugger
   options.cohort = cohortArray;
@@ -104,5 +104,5 @@ orderDirection.addEventListener('change', (event)=> {
   const arrFinal = processCohortData(options);
   divContent.innerHTML = '';
   llenandoData(arrFinal);
-  
+
 })
