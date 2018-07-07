@@ -111,8 +111,7 @@ if (orderBy === 'Porcentaje de lecturas completadas' && orderDirection === 'ASC'
  } else if (orderBy === 'Porcentaje de lecturas completadas' && orderDirection === 'DESC') {
    return users.sort((a, b) => (a.stats.reads.completed < b.stats.reads.completed ? 1 : -1));
 }
-debugger
-  return users;
+  // return users;
 }
 
 window.filterUsers = (users, search) => {

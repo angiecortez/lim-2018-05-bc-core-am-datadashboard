@@ -47,14 +47,22 @@
         <div class="ordenado">
           <label for="">Ordenar</label>
           <select id="orderDirection">
-            <option><a href="#"></a>ASCENDENTE</option>
-            <option><a href="#"></a>DESCENDENTE</option>
+            <option value="ASC">ASCENDENTE</option>
+            <option value="DESC"></a>DESCENDENTE</option>
+          </select>
+          <label for="">Ordenar por:</label>
+          <select id="orderBy" name="">
+            <option value="name">Nombre</option>
+            <option value="Porcentaje Completitud Total">Porcentaje Completitud Total</option>
+            <option value="Porcentaje ejercicios completos">Ejercicios Completados</option>
+            <option value="Porcentaje Quizzes completos">Quizzes Completados</option>
+            <option value="Puntuacion promedio en quizzes">Puntuación de Quizzes</option>
+            <option value="Porcentaje de lecturas completadas">Lecturas Completadas</option>
           </select>
           <br>
-          <button id="ordenar">ordenar</button>
           <input type="text" id="search" placeholder="Buscar ...">
         </div>
-        <div class="contentUsers"id="content">
+        <div class="contentUsers" id="content">
 
         </div>
       </section>

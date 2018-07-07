@@ -28,15 +28,17 @@
   margin: 0;
   padding: 0;
   width: 80%;
-  height: 20%;
-  position:absolute;
+  /* height: 20%; */
+  /* position:absolute; */
   display:block;
 
 }
 .porCurso p{
   margin: 0;
   padding: 0;
-  display: inline-block;
+  display:inline-table;
+  text-align: left;
+
 }
 
 /* menu verticsl */

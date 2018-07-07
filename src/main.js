@@ -1,6 +1,9 @@
 let listOfCohorts = document.querySelector('#sedes');
 let sectionMainContent = document.getElementById('main-content');
 let divContent = document.getElementById('content');
+let search = document.getElementById('search');
+let orderDirection = document.getElementById('orderDirection');
+let orderBy = document.getElementById('orderDirection');
 
 let options = {
   cohort: null,
@@ -41,13 +44,10 @@ const cohortsJSON = (campus, cohortArray) => { //debugger
   };
 }
 
-const progressJSON = (cohortName, ObjProgress)=> {
-  options.cohortData.progress = ObjProgress;
-  const arrFinal = processCohortData(options);
-  console.log(processCohortData(options));
-  divContent.innerHTML = '';
-  for (const user of arrFinal) {
-  divContent.innerHTML += `
+const llenandoData = (array) =>{
+  for (const user of array) {
+  divContent.innerHTML +=
+   `
   <div class="porCurso"> <p><strong>Nombre : </strong>${ user.stats.name.toUpperCase()}</p>
                 <p><strong>Porcentaje de Completitud :</strong>${ user.stats.percent + '%'}</p>
                 <p><strong>Ejercicios Completados    :</strong>${ user.stats.exercises.percent + '%'}</p>
@@ -58,6 +58,16 @@ const progressJSON = (cohortName, ObjProgress)=> {
     `
   }
 }
+
+const progressJSON = (cohortName, ObjProgress)=> {
+  options.cohortData.progress = ObjProgress;
+  const arrFinal = processCohortData(options);
+  console.log(processCohortData(options));
+  divContent.innerHTML = '';
+  llenandoData(arrFinal)
+  }
+
+//funcion de order
 
 const userJSON = (cohortName, userArray) => {
   options.cohortData.users = userArray;
@@ -78,3 +88,21 @@ sectionMainContent.addEventListener('click', event => {
   });
   loadJSON(event.target.id,`../data/cohorts/${event.target.id}/users.json`, userJSON)
 });
+
+//funcion de filtración
+search.addEventListener('input', (event) => {
+  valorEscrito = event.target.value;
+  options.search = valorEscrito;
+  const arrFinal = processCohortData(options);
+  divContent.innerHTML = '';
+  llenandoData(arrFinal);
+})
+
+orderDirection.addEventListener('change', (event)=> {
+  options.orderDirection = orderDirection.value;
+  options.orderBy = orderBy.value;
+  const arrFinal = processCohortData(options);
+  divContent.innerHTML = '';
+  llenandoData(arrFinal);
+  
+})
