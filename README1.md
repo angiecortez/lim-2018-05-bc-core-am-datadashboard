@@ -32,8 +32,8 @@ _ver_ y _usar_ la data de progreso del LMS. Para ello, proponemos crear un
 #### Spring Planning
  A lo largo de las semanas he ido decidiendo como se veria la interfaz de las alumnas y como la training manager veria el Dashboard de una manera fácil y didactica, planifique los string de acuerdo a lo que podria hacer de manera eficaz. Recibí mucho feedback de parte de mi Squad, para ver la funcionalidad y ver como se veria la Interfaz.
 
- ![feedback](/image/feedBack.jpg)
- ![Spring Planning](/image/springPlaning.jpg)
+ ![feedback](src/image/feedBack.jpg)
+ ![Spring Planning](src/image/springPlaning.jpg)
 
 #### 1) Definición del producto
 
@@ -74,13 +74,13 @@ Este fue mi Sketch inicial en el cual comenze a darme una idea de como queria qu
 #### 3) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
 Lamentablemente no he podido implementar aún el prototipo de alta fidelidad, pero dejo una imagen de la que me guíe mucho en este proceso.
-![Dashboard](src/image/dashboard-in-browser.jpg)
+![Dashboard](src/image/dashboard-in-browser.png)
 
 
 #### 4) Tests
 
 Adjunto mi test
-![Test](src/image/test-formulario.jpg)
+![Test](src/image/test-formulario.png)
 
 
 
