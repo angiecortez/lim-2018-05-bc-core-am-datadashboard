@@ -63,24 +63,24 @@ El objetivo principal del Data-Dashboard es que Alejandra pueda visualizar el av
 
  Desde un principio sabia como queria que se viese la interfaz, pero en el transcurso de las semanas se fueron dando demasiados cambios, analize la interfaz de acuerdo a el proceso funcional de la data.
 
- ![Proceso Funcional](/image/planeacion/jpg)
+ ![Proceso Funcional](src/image/planeacion.jpg)
 
 #### 2) Sketch de la solución (prototipo de baja fidelidad)
 
 Este fue mi Sketch inicial en el cual comenze a darme una idea de como queria que fuese la Interfaz.
 
-![Sketch](/image/prototipadoManual)
+![Sketch](src/image/prototipadoManual.jpg)
 
 #### 3) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
 Lamentablemente no he podido implementar aún el prototipo de alta fidelidad, pero dejo una imagen de la que me guíe mucho en este proceso.
-![Dashboard](/image/dashboard-in-browser.jpg)
+![Dashboard](src/image/dashboard-in-browser.jpg)
 
 
 #### 4) Tests
 
 Adjunto mi test
-![Test](/image/test-formulario.jpg)
+![Test](src/image/test-formulario.jpg)
 
 
 
