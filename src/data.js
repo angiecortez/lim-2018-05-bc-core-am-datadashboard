@@ -26,7 +26,7 @@ window.computeUsersStats = (users, progress, courses) => {
       return {
         total: exercises.length,
         completed: completedExercises,
-        percent: completedExercises / exercises.length * 100
+        percent: exercises.length !== 0 ?  completedExercises / exercises.length * 100 : 0
       }
     }
   const calculateReads = user => {
@@ -39,7 +39,7 @@ window.computeUsersStats = (users, progress, courses) => {
     return {
       total:  reads.length,
       completed: completedReads,
-      percent: Math.round(completedReads / reads.length * 100)
+      percent: reads.length !== 0 ? Math.round(completedReads / reads.length * 100) : 0
       }
     }
   const calculateQuizess = user => {
@@ -56,9 +56,9 @@ window.computeUsersStats = (users, progress, courses) => {
     return {
       total:  quizz.length,
       completed: completedQuizzes,
-      percent: Math.round(completedQuizzes / quizz.length * 100),
+      percent: quizz.length !== 0 ? Math.round(completedQuizzes / quizz.length * 100): 0,
       scoreSum: sumScore,
-      scoreAvg: Math.round(sumScore/completedQuizzes)
+      scoreAvg: completedQuizzes !== 0 ? Math.round(sumScore/completedQuizzes): 0
     }
   }
 
