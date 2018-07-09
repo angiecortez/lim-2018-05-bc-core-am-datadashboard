@@ -69,7 +69,7 @@ El objetivo principal del Data-Dashboard es que Alejandra pueda visualizar el av
 
 Este fue mi Sketch inicial en el cual comenze a darme una idea de como queria que fuese la Interfaz.
 
-![Sketch](src/image/prototipadoManual.jpg)
+![Sketch](src/image/prototipoManual.jpg)
 
 #### 3) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
