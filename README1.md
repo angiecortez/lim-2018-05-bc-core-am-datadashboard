@@ -116,9 +116,9 @@ alineación, jerarquía, entre otros.
 
 Los tips que me brindo Laboratoria me fueron muy utiles, adjunto unos cuantos mas que creo me dieron ejemplos mas detallados y me hicieron entender las los códigos:
 
-*[Array Multidimensional](http://www.jstips.co/es_es/javascript/flattening-multidimensional-arrays-in-javascript/)
-*[filtering & Sorting](http://www.jstips.co/es_es/javascript/filtering-and-sorting-a-list-of-strings/)
-*[Tania](https://www.taniarascia.com/real-world-examples-of-map-filter-and-reduce-in-javascript/) Me ayudo mucho con las líneas de comando, el uso de array.map, filter y más.
+* [Array Multidimensional](http://www.jstips.co/es_es/javascript/flattening-multidimensional-arrays-in-javascript/)
+* [filtering & Sorting](http://www.jstips.co/es_es/javascript/filtering-and-sorting-a-list-of-strings/)
+* [Tania](https://www.taniarascia.com/real-world-examples-of-map-filter-and-reduce-in-javascript/) Me ayudo mucho con las líneas de comando, el uso de array.map, filter y más.
 * [Array en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
 * [Array.sort en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/sort)
 * [Array.map en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map)
