@@ -5,7 +5,7 @@ let search = document.getElementById('search');
 let orderDirection = document.getElementById('orderDirection');
 let orderBy = document.getElementById('orderBy');
 
-let options = {
+let options = { //se crea este objeto vacio para almacenar los datos de los cohorts, users y porgress.
   cohort: null,
   cohortData:{
     users: null,
@@ -43,18 +43,18 @@ const cohortsJSON = (campus, cohortArray) => { //debugger
       `;
   };
 }
-
+//se crea este refactorizador para hacer el llenado de la data, se usa un string vacion cuando se creen templates y no demore en cargar los datos
 const llenandoData = (array) =>{
   let stringEmpty = '';
   divContent.innerHTML = '';
   for (const user of array) {
   stringEmpty += `
-  <div class="porCurso"> <p><strong>Nombre : </strong>${ user.stats.name.toUpperCase()}</p>
-                <p><strong>Porcentaje de Completitud :</strong>${ user.stats.percent + '%'}</p>
-                <p><strong>Ejercicios Completados    :</strong>${ user.stats.exercises.percent + '%'}</p>
-                <p><strong>Quizzes Completados       :</strong>${ user.stats.quizzes.percent + '%'}</p>
-                <p><strong>Lecturas Completados      :</strong>${ user.stats.reads.percent + '%'}</p>
-                <p><strong>Promedio de Quizzes       :</strong>${ user.stats.quizzes.scoreAvg + '%'}</p>
+  <div class="porCurso"> <p><strong>Nombre : </strong>${ user.stats.name}</p><br>
+                <p><strong>Porcentaje de Completitud :</strong>${ user.stats.percent + '%'}</p><br>
+                <p><strong>Ejercicios Completados    :</strong>${ user.stats.exercises.percent + '%'}</p><br>
+                <p><strong>Quizzes Completados       :</strong>${ user.stats.quizzes.percent + '%'}</p><br>
+                <p><strong>Lecturas Completados      :</strong>${ user.stats.reads.percent + '%'}</p><br>
+                <p><strong>Promedio de Quizzes       :</strong>${ user.stats.quizzes.scoreAvg + '%'}</p><br>
   </div>
     `
   }
@@ -72,7 +72,7 @@ const userJSON = (cohortName, userArray) => {
   options.cohortData.users = userArray;
   loadJSON(cohortName,`../data/cohorts/${cohortName}/progress.json`, progressJSON);
 }
-
+//de click
 listOfCohorts.addEventListener('click', (event) => {
   event.preventDefault()
   // console.log(event.target.id);
@@ -88,7 +88,7 @@ sectionMainContent.addEventListener('click', event => {
   loadJSON(event.target.id,`../data/cohorts/${event.target.id}/users.json`, userJSON)
 });
 
-//funcion de filtración
+//dom de filtración
 search.addEventListener('input', (event) => {
   valorEscrito = event.target.value;
   options.search = valorEscrito;
@@ -97,23 +97,19 @@ search.addEventListener('input', (event) => {
   llenandoData(arrFinal);
 })
 
+// dom de ordenamiento
 orderDirection.addEventListener('change', (event)=> {
   console.log(event.target.value);
   console.log(options);
   //console.log(options.orderDirection);
   options.orderDirection = orderDirection.value;
   //console.log(orderBy.value);
-  console.log(options);
   const arrFinal = processCohortData(options);
-  // divContent.innerHTML = '';
   llenandoData(arrFinal);
   orderBy.addEventListener('change', (event)=>{
     console.log(orderBy.value);
     options.orderBy = orderBy.value;
-    console.log(options);
-    // divContent.innerHTML = '';
     const arrFinal = processCohortData(options);
-    llenandoData(arrFinal);    
+    llenandoData(arrFinal);
   })
-
 })
