@@ -13,7 +13,7 @@ window.computeUsersStats = (users, progress, courses) => {
         count += user[course]['percent'];
       }
     });
-    return count/ courses.length;
+    return count / courses.length;
   };
   const calculateExercises = user => {
     let units = courses.reduce((accum, c) => user[c] && user[c].units && [...accum, ...Object.values(user[c].units)], []) || [];
@@ -120,6 +120,7 @@ window.filterUsers = (users, search) => {
 
 window.processCohortData = (options)  => {
     const courses = Object.keys(options.cohort.coursesIndex);
+    console.log(courses);
     let users = computeUsersStats(options.cohortData.users, options.cohortData.progress, courses);
     users = sortUsers (users, options.orderBy, options.orderDirection);
     users = options.search ?  filterUsers(users, options.search) : users;

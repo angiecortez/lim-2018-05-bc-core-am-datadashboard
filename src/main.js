@@ -37,10 +37,8 @@ const cohortsJSON = (campus, cohortArray) => { //debugger
   console.log(cohortsTotal);
   sectionMainContent.innerHTML= '';
   for (cohort of cohortsTotal) {
-    sectionMainContent.innerHTML +=
-    `
-       <li class= "nuevoScroll" id='${cohort.id}'>${cohort.id}</li>
-      `;
+    cohort.id === 'lim-2018-03-pre-core-pw' ? sectionMainContent.innerHTML += `<li><a id='${cohort.id}'>${cohort.id}</a></li>` : false
+
   };
 }
 //se crea este refactorizador para hacer el llenado de la data, se usa un string vacion cuando se creen templates y no demore en cargar los datos
@@ -64,7 +62,6 @@ const llenandoData = (array) =>{
 const progressJSON = (cohortName, ObjProgress)=> {
   options.cohortData.progress = ObjProgress;
   const arrFinal = processCohortData(options);
-  console.log(processCohortData(options));
   llenandoData(arrFinal)
   }
 
@@ -75,7 +72,6 @@ const userJSON = (cohortName, userArray) => {
 //de click
 listOfCohorts.addEventListener('click', (event) => {
   event.preventDefault()
-  // console.log(event.target.id);
   loadJSON(event.target.id,'../data/cohorts.json', cohortsJSON);
 });
 //element reasignara el valor de options.cohorts
@@ -99,15 +95,10 @@ search.addEventListener('input', (event) => {
 
 // dom de ordenamiento
 orderDirection.addEventListener('change', (event)=> {
-  console.log(event.target.value);
-  console.log(options);
-  //console.log(options.orderDirection);
   options.orderDirection = orderDirection.value;
-  //console.log(orderBy.value);
   const arrFinal = processCohortData(options);
   llenandoData(arrFinal);
   orderBy.addEventListener('change', (event)=>{
-    console.log(orderBy.value);
     options.orderBy = orderBy.value;
     const arrFinal = processCohortData(options);
     llenandoData(arrFinal);

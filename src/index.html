@@ -1,79 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
-    <meta name="description" content="Plataforma">
-    <link rel="icon" href="/image/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="twitter:" content="">
-  </head>
-  <body>
-      <section class="main" id="container-lab-view" style="display: ">
-        <div class="menu" id="acorh">
-                <ul class="acorh">
-                    <li><img class="img-menu" src="image/Laboratoria-Logo.png"></li>
-                    <li><img class="user-menu" src="image/user_women.png"></li>
-                    <li><a href="#">Overview</a></li>
-                    <li><a href="#">Sede</a>
-                      <ul id="sedes">
-                        <li><a href="" id="lim">Lima</a></li>
-                        <li><a href="" id="aqp">Arequipa</a></li>
-                        <li><a href="" id="scl">Chile</a></li>
-                        <li><a href="" id="mex">México</a></li>
-                        <li><a href="" id="gdl">Guadalajara</a></li>
-                        <li><a href="" id="spl">Brasil</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Ordenar por:</a>
-                      <ul>
-                        <li><a href="">Nombre</a></li>
-                        <li><a href="">Porcentaje Completitud Total</a></li>
-                        <li><a href="">Ejercicios Completados</a></li>
-                        <li><a href="">Quizzes Completados</a></li>
-                        <li><a href="">Puntuación de Quizzes</a></li>
-                        <li><a href="">Lecturas Completadas</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Cohorts</a></li>
-                      <ul class="sroll" id="main-content">
 
-                      </ul>
-                    <li><a href="#">Configuración</a></li>
-                  </ul>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <title>Data Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Plataforma">
+  <link rel="icon" href="/image/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="twitter:" content="">
+</head>
 
-        <div class="ordenado">
-          <label for="">Ordenar</label>
-          <select id="orderDirection">
-            <option value="ASC">ASCENDENTE</option>
-            <option value="DESC">DESCENDENTE</option>
-          </select>
-          <label for="">Ordenar por:</label>
-          <select id="orderBy" name="">
-            <option value="name">Nombre</option>
-            <option value="Porcentaje Completitud Total">Porcentaje Completitud Total</option>
-            <option value="Porcentaje ejercicios completos">Ejercicios Completados</option>
-            <option value="Porcentaje Quizzes completos">Quizzes Completados</option>
-            <option value="Puntuacion promedio en quizzes">Puntuación de Quizzes</option>
-            <option value="Porcentaje de lecturas completadas">Lecturas Completadas</option>
-          </select>
-          <br>
-          <input type="text" id="search" placeholder="Buscar ...">
-          <br>
-          <div class="contentUsers" id="content">
+<body>
+  <div class="topnav">
+    <!-- <ul>
+    <li ><img class="img-menu" src="image/Laboratoria-Logo.png"></li>
+    </ul> -->
+    <!-- <a class="active">Home</a> -->
+    <a class="right" href="#">Laboratoria</a>
 
-          </div>
-        </div>
-        <!-- <div class="contentUsers" id="content">
+  </div>
+  <section class="main" id="container-lab-view" style="display: ">
+    <div class="menu" id="acorh">
+      <ul class="acorh">
+        <li><img class="img-menu" src="image/Laboratoria-Logo.png"></li>
+        <li><img class="user-menu" src="image/user_women.png"></li>
+        <li><a href="#">Overview</a></li>
+        <li class="margin-a"><a href="#">Sede</a>
+          <ul id="sedes">
+            <li><a href="" id="lim">Lima</a></li>
+            <li><a href="" id="aqp">Arequipa</a></li>
+            <li><a href="" id="scl">Chile</a></li>
+            <li><a href="" id="mex">México</a></li>
+            <li><a href="" id="gdl">Guadalajara</a></li>
+            <li><a href="" id="spl">Brasil</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Cohorts</a>
+          <ul id="main-content">
+
+          </ul>
+        </li>
+        <!-- <li><a href="#">Ordenar por:</a>
+          <ul>
+            <li><a href="">Nombre</a></li>
+            <li><a href="">Porcentaje Completitud Total</a></li>
+            <li><a href="">Ejercicios Completados</a></li>
+            <li><a href="">Quizzes Completados</a></li>
+            <li><a href="">Puntuación de Quizzes</a></li>
+            <li><a href="">Lecturas Completadas</a></li>
+          </ul>
+        </li> -->
+        <li><a href="#">Configuración</a></li>
+      </ul>
+    </div>
+
+    <div class="ordenado">
+      <label for="">Ordenar</label>
+      <select id="orderDirection">
+        <option value="ASC">ASCENDENTE</option>
+        <option value="DESC">DESCENDENTE</option>
+      </select>
+      <label for="">Ordenar por:</label>
+      <select id="orderBy" name="">
+        <option value="name">Nombre</option>
+        <option value="Porcentaje Completitud Total">Porcentaje Completitud Total</option>
+        <option value="Porcentaje ejercicios completos">Ejercicios Completados</option>
+        <option value="Porcentaje Quizzes completos">Quizzes Completados</option>
+        <option value="Puntuacion promedio en quizzes">Puntuación de Quizzes</option>
+        <option value="Porcentaje de lecturas completadas">Lecturas Completadas</option>
+      </select>
+      <br>
+      <input type="text" id="search" placeholder="Buscar ...">
+      <br>
+      <div  id="content">
+
+      </div>
+    </div>
+    <!-- <div class="contentUsers" id="content">
 
         </div> -->
-      </section>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <!-- <script src="blablabla.js"></script> -->
-    <script src="data.js"></script>
-    <!-- <script src="angie.js"></script> -->
-    <script src="main.js"></script>
-  </body>
+  </section>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <!-- <script src="blablabla.js"></script> -->
+  <script src="data.js"></script>
+  <!-- <script src="angie.js"></script> -->
+  <script src="main.js"></script>
+</body>
+
 </html>
