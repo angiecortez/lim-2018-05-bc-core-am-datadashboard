@@ -47,13 +47,14 @@ const llenandoData = (array) =>{
   divContent.innerHTML = '';
   for (const user of array) {
   stringEmpty += `
-  <div class="porCurso"> <p><strong>Nombre : </strong>${ user.stats.name}</p><br>
-                <p><strong>Porcentaje de Completitud :</strong>${ user.stats.percent + '%'}</p><br>
-                <p><strong>Ejercicios Completados    :</strong>${ user.stats.exercises.percent + '%'}</p><br>
-                <p><strong>Quizzes Completados       :</strong>${ user.stats.quizzes.percent + '%'}</p><br>
-                <p><strong>Lecturas Completados      :</strong>${ user.stats.reads.percent + '%'}</p><br>
-                <p><strong>Promedio de Quizzes       :</strong>${ user.stats.quizzes.scoreAvg + '%'}</p><br>
-  </div>
+  <tr class="porCurso">
+		<td>${ user.stats.name}</td>
+    <td>${ user.stats.percent + '%'}</td>
+    <td>${ user.stats.exercises.percent + '%'}</td>
+    <td>${ user.stats.quizzes.percent + '%'}</td>
+    <td>${ user.stats.reads.percent + '%'}</td>
+    <td>${ user.stats.quizzes.scoreAvg + '%'}</td>
+  </tr>
     `
   }
   divContent.innerHTML = stringEmpty;
